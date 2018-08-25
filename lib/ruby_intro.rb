@@ -7,7 +7,26 @@ def sum arr
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  # Find the two largest integers in the array
+  biggest = nil
+  second_biggest = nil
+  for i in arr
+    if biggest == nil or biggest <= i
+      second_biggest = biggest
+      biggest = i
+    elsif second_biggest == nil or second_biggest < i
+      second_biggest = i
+    end
+  end
+  
+  # Handle the situations of having 0 or 1 element in the array
+  if biggest == nil
+    return 0
+  elsif second_biggest == nil
+    return biggest
+  end
+  
+  return biggest + second_biggest
 end
 
 def sum_to_n? arr, n
