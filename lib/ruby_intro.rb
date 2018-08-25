@@ -30,7 +30,10 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  arr.combination(2) { |c|
+    return true if c[0] + c[1] == n
+  }
+  false
 end
 
 # Part 2
